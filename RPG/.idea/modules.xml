@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../IAsnake/.idea/IAsnake.iml" filepath="$PROJECT_DIR$/../IAsnake/.idea/IAsnake.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../algo génétique/.idea/algo génétique.iml" filepath="$PROJECT_DIR$/../algo génétique/.idea/algo génétique.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/pygame.iml" filepath="$PROJECT_DIR$/.idea/pygame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../snake-ai-pytorch-main/.idea/snake-ai-pytorch-main.iml" filepath="$PROJECT_DIR$/../snake-ai-pytorch-main/.idea/snake-ai-pytorch-main.iml" />
+    </modules>
+  </component>
+</project>
