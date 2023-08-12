@@ -84,21 +84,21 @@ class P4:
         else:
             return [False]
 
-    def in_grid(self, depth, new_grid, grids_score):
+    def in_grid(self, depth, new_grid, grids_score_save):
         i = 0
-        while i < len(grids_score[depth]) and new_grid != grids_score[depth][i][0]:
+        while i < len(grids_score_save[depth]) and new_grid != grids_score_save[depth][i][0]:
             i += 1
         return i
 
 
-    def find_best_move(self, depth, player, grid=None, grids_score=None):
+    def find_best_move(self, depth, player, grid=None, grids_score_save=None):
         other = (2 if player == 1 else 1)
         moves = []
         if grid is None:
             grid = self.grid
-            grids_score = []
+            grids_score_save = []
             for i in range(depth + 1):
-                grids_score.append([])
+                grids_score_save.append([])
             for p in [1, 2]:
                 if grid[0][3] == 0:
                     if grid[-1] == [0, 0, 0, 0, 0, 0, 0]:
@@ -128,13 +128,13 @@ class P4:
                 if state[0]:
                     score = state[1]
                 else:
-                    i_find_grid = self.in_grid(depth, new_grid, grids_score)
-                    if i_find_grid < len(grids_score[depth]):
-                        score = grids_score[depth][i_find_grid][1]
+                    i_find_grid = self.in_grid(depth, new_grid, grids_score_save)
+                    if i_find_grid < len(grids_score_save[depth]):
+                        score = grids_score_save[depth][i_find_grid][1]
                     elif depth > 0:
-                        score = 0 - self.find_best_move(depth-1, other, new_grid, grids_score)[1]
+                        score = 0 - self.find_best_move(depth-1, other, new_grid, grids_score_save)[1]
                         if self.depth - depth < 6:
-                            grids_score[depth].append((new_grid, score))
+                            grids_score_save[depth].append((new_grid, score))
                     else:
                         score = 0
                 if score == 1:
